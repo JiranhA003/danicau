@@ -1,13 +1,10 @@
-<!--
-  Exemplo de site homenagem romântico (estilo preto + cinza)
--->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Para Você, Com Amor ❤️</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&family=Rock+Salt&display=swap" rel="stylesheet"/>
   <style>
     :root {
       --primary: #ff4f69;
@@ -16,9 +13,9 @@
       --text: #f0f0f0;
     }
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
     body {
       font-family: 'Montserrat', sans-serif;
@@ -28,14 +25,12 @@
     }
     header {
       text-align: center;
-      padding: 4rem 1rem;
+      padding: 4rem 1rem 2rem;
     }
-    header img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 50%;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    .graffiti {
+      font-family: 'Rock Salt', cursive;
+      font-size: 1.5rem;
+      color: #888;
       margin-bottom: 1rem;
     }
     header h1 {
@@ -48,11 +43,15 @@
       font-size: 1.2rem;
       color: #ccc;
     }
-
     section {
-      max-width: 800px;
+      max-width: 1000px;
       margin: 3rem auto;
       padding: 0 1rem;
+    }
+    .content-side-by-side {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
     }
     .letter {
       background: var(--foreground);
@@ -61,29 +60,33 @@
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
       line-height: 1.6;
       font-size: 1.1rem;
+      flex: 1;
+      min-width: 300px;
     }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-    }
-    .gallery img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
+    .carousel-container {
+      position: relative;
+      flex: 1;
+      min-width: 300px;
+      height: 550px;
+      overflow: hidden;
       border-radius: 1rem;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-      transition: transform 0.3s;
     }
-    .gallery img:hover {
-      transform: scale(1.05);
+    .carousel-slide {
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.5s ease-in-out;
     }
+    .carousel-slide img {
+      width: 100%;
+      height: 550px;
+      object-fit: cover;
+    }
+
     .music-player {
       text-align: center;
       margin: 2rem 0;
     }
 
-    /* Emojis caindo */
     .emoji {
       position: fixed;
       top: -50px;
@@ -101,40 +104,36 @@
   </style>
 </head>
 <body>
-
   <header>
-    <img src="https://images.unsplash.com/photo-1509592149234-d099cf1b5d2d?auto=format&fit=crop&w=400&q=80" alt="Nós dois">
+    <div class="graffiti">(para a minha lua brilhante)</div>
     <h1>Para Você, Com Amor</h1>
     <p>Um pedacinho do meu coração em forma de site 💌</p>
   </header>
 
   <section>
-    <div class="letter">
-      <p>Querida [Nome],</p>
-      <p>
-        Cada instante ao seu lado transforma o tempo em poesia.<br>
-        Este site é apenas um reflexo da beleza que você traz para minha vida.<br>
-        Obrigado por iluminar meus dias com seu sorriso e tornar meu mundo um lugar melhor.
-      </p>
-      <p>
-        Com todo meu amor,<br>
-        [Seu Nome]
-      </p>
-    </div>
-  </section>
-
-  <section>
-    <h2 style="text-align:center;font-family:'Dancing Script',cursive;font-size:2rem;color:var(--primary);margin-bottom:1rem;">Nossas Memórias</h2>
-    <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=600&q=80" alt="Foto 1">
-      <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=600&q=80" alt="Foto 2">
-      <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80" alt="Foto 3">
+    <div class="content-side-by-side">
+      <div class="letter">
+        <p>Sabe eu tava pensando em como vc me fez mudar, nunca pensei que eu poderia ser assim sabe alguém legal<br>
+        Ou importante pra alguém, teve tanta coisa que eu queria te dizer mas eu ainda não posso te contar,<br>
+        por isso eu quero que você saiba que não importa a dificuldade ou o tempo que nós dois ficarmos afastados eu sempre vou estar aqui te esperando.<br>
+        Danielli eu te amo mais do que qualquer riqueza que eu possa conseguir mais que qualquer segurança que eu possa ter,<br>
+        se não for você a mulher da minha vida eu não quero mais ninguém por isso eu dediquei esse site pra você.<br>
+        Bom não é as cartas que você queria mas é meu jeitinho de te dar um presente.<br>
+        Eu te amo para sempre e sempre ❤️❤️</p>
+      </div>
+      <div class="carousel-container">
+        <div class="carousel-slide" id="carousel-slide">
+          <img src="foto1.jpg" alt="Foto 1">
+          <img src="foto2.jpg" alt="Foto 2">
+          <img src="foto3.jpg" alt="Foto 3">
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="music-player">
     <h2 style="font-family:'Dancing Script',cursive;font-size:2rem;color:var(--primary);margin-bottom:1rem;">Nossa Canção</h2>
-    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://www.youtube.com/embed/1yvH9ERTjZo?autoplay=0&loop=1&playlist=1yvH9ERTjZo"></iframe>
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6AWw0Hq3ssCZetqekluIeK?utm_source=generator&theme=0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   </section>
 
   <script>
@@ -148,46 +147,21 @@
       document.body.appendChild(emoji);
       setTimeout(() => emoji.remove(), 6000);
     }
-    setInterval(createEmoji, 400);
-  </script>
+    setInterval(createEmoji, 320);
 
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
+    // Carrossel automático vertical
+    let currentIndex = 0;
+    const slide = document.getElementById('carousel-slide');
+    const totalSlides = slide.children.length;
+
+    function showSlide(index) {
+      slide.style.transform = `translateY(-${index * 550}px)`;
+    }
+
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      showSlide(currentIndex);
+    }, 3000);
+  </script>
 </body>
 </html>
